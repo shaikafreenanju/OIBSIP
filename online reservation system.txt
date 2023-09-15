@@ -1,0 +1,22 @@
+ import java.util.Scanner;
+ public class OnlineReservationSystem {
+     private static final String SAMPLE_USERNAME = "admin";
+     private static final String SAMPLE_PASSWORD = "password";
+     public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+         System.out.println("welcome to the Online Reservation System");
+         System.out.print("Enter your username: ");
+         String username = scanner.nextLine();
+         System.out.print("Enter your password: ");
+         String password = scanner.nextLine();
+         if (login(username, password)) {
+             System.out.println("Login succesful. you can now access the main system.");
+        } else {
+            System.out.println("Login failed. please check your credentials.");
+        }
+        scanner.close();
+    }
+    private static boolean login(String username, String password) {
+        return username.equals(SAMPLE_USERNAME) && password.equals(SAMPLE_PASSWORD);
+    }
+ }
